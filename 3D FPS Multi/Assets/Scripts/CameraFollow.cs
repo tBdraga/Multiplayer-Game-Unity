@@ -28,6 +28,11 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //initialize stuff
+        playerObject = GameObject.Find("Player(Clone)");
+        cameraObject = Camera.main.gameObject;
+        cameraFollowObject = playerObject.transform.Find("CameraFollow").gameObject;
+
         Vector3 rot = transform.localRotation.eulerAngles;
         rotY = rot.y;
         rotX = rot.x;

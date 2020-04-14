@@ -67,11 +67,11 @@
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Demos\DemoSlotRacer\Scripts\BezierCurve\Editor\BezierSplineInspector.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Demos\DemoSlotRacer\Scripts\BezierCurve\Editor\LineInspector.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\Demos\DemoSlotRacer\Scripts\BezierCurve\Editor\PunDemos.DemoSlotcarEditor.asmdef" />
-    <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
