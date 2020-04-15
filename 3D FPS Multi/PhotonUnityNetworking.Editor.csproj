@@ -80,11 +80,11 @@
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Editor\Views\PhotonTransformViewEditor.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\Code\Editor\PhotonUnityNetworking.Editor.asmdef" />
     <None Include="Assets\Photon\PhotonUnityNetworking\Code\Editor\ReordableList\LICENSE.txt" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>E:/Multiplayer Game/Multiplayer-Game-Unity/3D FPS Multi/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
