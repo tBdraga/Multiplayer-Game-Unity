@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using UnityEngine.UI;
+using System.Text;
 
 public class PlayerController : MonoBehaviour
 {
+    GameObject scoreBoard;
+    int playerCount;
+
+
     float speed = 4;
     float rotationSpeed = 80;
     float rotation = 0;
@@ -19,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //find scoreboard canvas
+        scoreBoard = GameObject.Find("Canvas").transform.Find("ScoreBoard").gameObject;
 
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
@@ -33,6 +42,38 @@ public class PlayerController : MonoBehaviour
 
         Movement();
         GetInput();
+
+        //Scoreboard
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            //show scoreboard
+            scoreBoard.SetActive(true);
+            //update scoreboard
+            updateScoreboard();
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            //hide scoreboard
+            scoreBoard.SetActive(false);
+        }
+    }
+
+    void updateScoreboard() {
+        //initialize player count
+        playerCount = PhotonNetwork.PlayerList.Length;
+
+        //get player names
+        var playerNames = new StringBuilder();
+
+        foreach (var player in PhotonNetwork.PlayerList) {
+            //append names
+            playerNames.Append(player.NickName);
+            playerNames.Append("\n");
+        }
+
+        string output = "Online players: " + playerCount.ToString() + "\n" + playerNames.ToString();
+        scoreBoard.transform.Find("Text").GetComponent<Text>().text = output;
     }
 
     void Movement()

@@ -11,6 +11,8 @@ public class TakeDamage : MonoBehaviourPunCallbacks
 
     private float playerHealth;
     public float startHealth = 100;
+    float score = 0;
+    float opponentScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -73,8 +75,9 @@ public class TakeDamage : MonoBehaviourPunCallbacks
         respawnText.GetComponent<Text>().text = "";
 
         if (photonView.IsMine) {
-            int randomSpawnPoint = Random.Range(-5, 5);
-            transform.position = new Vector3(randomSpawnPoint, 0, randomSpawnPoint);
+            //set spawn position
+            photonView.RPC("setRespawnPosition", RpcTarget.AllBuffered);
+
             //gameObject.SetActive(true);
             transform.GetComponent<PlayerController>().enabled = true;
 
@@ -88,5 +91,11 @@ public class TakeDamage : MonoBehaviourPunCallbacks
         playerHealth = startHealth;
 
         healthBar.fillAmount = playerHealth / startHealth;
+    }
+
+    [PunRPC]
+    public void setRespawnPosition() {
+        int randomSpawnPoint = Random.Range(-20, 20);
+        transform.position = new Vector3(randomSpawnPoint, 0, randomSpawnPoint);
     }
 }

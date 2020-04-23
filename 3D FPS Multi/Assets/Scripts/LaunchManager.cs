@@ -48,6 +48,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
+
     public void createNewRoom()
     {
         string roomName = "Room " + Random.Range(0, 100);
